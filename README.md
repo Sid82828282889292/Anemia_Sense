@@ -27,7 +27,7 @@ AnemiaSense is a Flask-based web application that leverages machine learning to 
 
 ## 🖥️ Demo
 
-👉 [Live Demo on Render (Coming Soon)](https://your-render-url)
+👉 [Live Demo](https://anemia-sense.onrender.com/)
 
 ---
 
