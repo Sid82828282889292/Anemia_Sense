@@ -1,19 +1,40 @@
+# 🩸 AnemiaSense – Anemia Prediction Web App
 
-# Anemia Prediction Web App 🩸
+AnemiaSense is a Flask-based web application that leverages machine learning to predict the risk of anemia based on critical blood parameters such as Hemoglobin, MCH, MCHC, and MCV. The app uses a trained Random Forest model to provide predictions along with risk factor insights and actionable health recommendations.
 
-This Flask web app uses machine learning to predict anemia risk based on user-submitted blood parameters like Hemoglobin, MCH, MCHC, and MCV.
+---
 
-## Features
-- Prediction using trained Random Forest model
-- Recommendations and risk factor insights
-- User-friendly web interface
+## 🚀 Features
 
-## Run Locally
+- ✅ Predict anemia risk using a trained ML model
+- 📊 Input form with user-friendly interface
+- 💡 Personalized recommendations based on results
+- 🔍 Highlights potential risk factors
+- 📁 Built with Flask, HTML/CSS (Jinja templates)
+- 🌐 Ready for free deployment (Render)
+
+---
+
+## 🧪 Blood Parameters Used
+
+- **Gender**
+- **Hemoglobin (g/dL)**
+- **MCH (pg)**
+- **MCHC (g/dL)**
+- **MCV (fL)**
+
+---
+
+## 🖥️ Demo
+
+👉 [Live Demo on Render (Coming Soon)](https://your-render-url)
+
+---
+
+## 🛠️ Local Setup
+
+### 1. Clone the Repository
 
 ```bash
-pip install -r requirements.txt
-python app.py
-
-# Anemia_Sense
-Anemiasense leverages machine learning algorithms to provide precise recognition and management of anemia, a condition characterized by a deficiency of red blood cells or hemoglobin.
-
+git clone https://github.com/Sid82828282889292/Anemia_Sense.git
+cd Anemia_Sense
