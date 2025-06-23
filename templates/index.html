@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anemia Predictor - Your Health Guardian</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnemiaSense - Your Health Guardian</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='main-logo.png') }}">
+
+  <!-- ✅ Open Graph Meta Tags -->
+  <meta property="og:title" content="Anemia Predictor - Your Health Companion" />
+  <meta property="og:description" content="AI-powered anemia prediction using your blood parameters. Get instant results and health tips." />
+  <meta property="og:image" content="{{ url_for('static', filename='main-logo.png', _external=True) }}" />
+  <meta property="og:url" content="https://anemia-sense.onrender.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Twitter Card (optional but recommended) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anemia Predictor - Your Health Companion" />
+  <meta name="twitter:description" content="AI-powered anemia prediction using your blood parameters. Get instant results and health tips." />
+  <meta name="twitter:image" content="{{ url_for('static', filename='main-logo.png', _external=True) }}" />
 </head>
 <body>
     <!-- Navigation -->
