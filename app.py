@@ -1,14 +1,10 @@
 from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
-import pickle
 import joblib
 
 app = Flask(__name__)
 
-# Load your trained model
-# with open('random_forest_model.pkl', 'rb') as f:
-#     model = pickle.load(f)
 model = joblib.load('random_forest_model.pkl')
 
 @app.route('/')
