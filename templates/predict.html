@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="logo">
+                🩸 AnemiaSense
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('details') }}">Details</a></li>
+                <li><a href="{{ url_for('predict') }}" class="active">Predict</a></li>
+            </ul>
+            <a href="{{ url_for('details') }}" class="cta-button">New Prediction</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Your Anemia Prediction Results</h1>
+            <p>Based on advanced machine learning analysis of your blood parameters</p>
+        </section>
+
+        <div class="container">
+            <!-- Prediction Results Section -->
+            <div class="prediction-result">
+                <div id="predictionContent">
+                    {% if submitted %}
+                        <!-- Show prediction results when available -->
+                        <div class="result-card {{ 'result-positive' if prediction_result == 'positive' else 'result-negative' }}">
+                            <div class="result-icon">
+                                {{ '⚠️' if prediction_result == 'positive' else '✅' }}
+                            </div>
+                            <h2 class="result-title">
+                                {{ 'Anemia Risk Detected' if prediction_result == 'positive' else 'No Anemia Detected' }}
+                            </h2>
+                            <p class="result-description">
+                                Based on your blood parameters, our AI model predicts 
+                                {{ 'a risk of anemia' if prediction_result == 'positive' else 'no significant anemia risk' }} 
+                                with {{ confidence }}% confidence.
+                            </p>
+                            <div class="recommendation">
+                                <h4>{{ 'Recommendations' if prediction_result == 'positive' else 'Health Maintenance Tips' }}</h4>
+                                <ul>
+                                    {% for recommendation in recommendations %}
+                                        <li>{{ recommendation }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% if risk_factors %}
+                                    <h4 style="margin-top: 1rem;">Key Indicators:</h4>
+                                    <ul>
+                                        {% for factor in risk_factors %}
+                                            <li>{{ factor }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <a href="{{ url_for('details') }}" class="hero-button">New Prediction</a>
+                        </div>
+                    {% endif %}
+                
+                    {% if not submitted %}
+                        <!-- Only show this if no data has been submitted (GET request) -->
+                        <div class="result-card">
+                            <div class="result-icon" style="background: linear-gradient(135deg, #4299E1, #3182CE);">
+                                📊
+                            </div>
+                            <h2 class="result-title" style="color: #4299E1;">Ready for Analysis</h2>
+                            <p class="result-description">
+                                Please complete the health details form to get your personalized anemia risk assessment.
+                            </p>
+                            <a href="{{ url_for('details') }}" class="hero-button">Enter Health Details</a>
+                        </div>
+                    {% endif %}
+                </div>
+                
+            </div>
+
+            <!-- Information Section -->
+            <section class="cards-grid" style="margin-top: 3rem;">
+                <div class="card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Medical Disclaimer</h3>
+                    <p>This prediction tool is for educational purposes only and should not replace professional medical advice. Always consult with a healthcare provider for proper diagnosis and treatment.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔬</div>
+                    <h3>AI Technology</h3>
+                    <p>Our machine learning model has been trained on thousands of medical records to provide accurate anemia risk assessments based on blood parameter analysis.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Continuous Learning</h3>
+                    <p>Our AI model continuously improves its accuracy through advanced machine learning techniques and updated medical research.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🩺</div>
+                    <h3>Next Steps</h3>
+                    <p>Based on your results, we provide personalized recommendations for follow-up care, lifestyle changes, and when to consult healthcare professionals.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AnemiaSense</h3>
+                <p>Advanced machine learning platform for anemia detection and health monitoring. Empowering individuals with early detection capabilities for better health outcomes.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@anemiasense.com</p>
+                <p>Phone: 080003 38855</p>
+                <p>Address: Christian Medical College, IDA Scudder Rd, Vellore, Tamil Nadu 632004</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="{{ url_for('home') }}" class="active">Home</a></p>
+                <p><a href="{{ url_for('about') }}">About</a></p>
+                <p><a href="{{ url_for('details') }}">Details</a></p>
+                <p><a href="{{ url_for('predict') }}">Predict</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p><a href="mailto:support@anemiasense.com">Technical Support</a></p>
+                <p><a href="mailto:health@anemiasense.com">Health Inquiries</a></p>
+                <p>Available 24/7 for assistance</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 AnemiaSense. All rights reserved. | Leveraging Machine Learning for Precise Anemia Detection</p>
+        </div>
+    </footer>
+</body>
+</html>

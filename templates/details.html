@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Details - Anemia Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                🩸 AnemiaSense
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('details') }}" class="active">Details</a></li>
+                <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            </ul>
+            <a href="{{ url_for('predict') }}" class="cta-button">Get Prediction</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Enter Your Health Details</h1>
+            <p>Please provide your blood parameter values for accurate anemia prediction</p>
+        </section>
+
+        <div class="container">
+            <!-- Form Section -->
+            <div class="form-container">
+                <form id="anemiaForm" action="/predict" method="POST">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <small>Gender affects normal hemoglobin ranges</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hemoglobin">Hemoglobin Level (g/dL)</label>
+                        <input 
+                            type="number" 
+                            id="hemoglobin" 
+                            name="hemoglobin" 
+                            step="0.1" 
+                            min="5" 
+                            max="20" 
+                            placeholder="e.g., 12.5"
+                            required
+                        >
+                        <small>Normal range: Men (13.8-17.2), Women (12.1-15.1) g/dL</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mch">MCH Value (pg)</label>
+                        <input 
+                            type="number" 
+                            id="mch" 
+                            name="mch" 
+                            step="0.1" 
+                            min="15" 
+                            max="40" 
+                            placeholder="e.g., 29.5"
+                            required
+                        >
+                        <small>Mean Corpuscular Hemoglobin - Normal range: 27-32 pg</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mchc">MCHC Value (g/dL)</label>
+                        <input 
+                            type="number" 
+                            id="mchc" 
+                            name="mchc" 
+                            step="0.1" 
+                            min="25" 
+                            max="40" 
+                            placeholder="e.g., 34.2"
+                            required
+                        >
+                        <small>Mean Corpuscular Hemoglobin Concentration - Normal range: 32-36 g/dL</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mcv">MCV Value (fL)</label>
+                        <input 
+                            type="number" 
+                            id="mcv" 
+                            name="mcv" 
+                            step="0.1" 
+                            min="60" 
+                            max="120" 
+                            placeholder="e.g., 85.0"
+                            required
+                        >
+                        <small>Mean Corpuscular Volume - Normal range: 80-100 fL</small>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Predict Anemia Risk
+                    </button>
+                </form>
+            </div>
+
+            <!-- Information Cards -->
+            <section class="cards-grid" style="margin-top: 3rem;">
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Data Privacy</h3>
+                    <p>Your health information is completely secure and confidential. We do not store or share your personal health data.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Instant Analysis</h3>
+                    <p>Our AI model processes your data immediately to provide accurate anemia risk assessment within seconds.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>High Accuracy</h3>
+                    <p>Our machine learning model has been trained on extensive medical data to ensure reliable and precise predictions.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Expert Recommendations</h3>
+                    <p>Receive personalized health recommendations based on your results to help manage and improve your health.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AnemiaSense</h3>
+                <p>Advanced machine learning platform for anemia detection and health monitoring. Empowering individuals with early detection capabilities for better health outcomes.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@anemiasense.com</p>
+                <p>Phone: 080003 38855</p>
+                <p>Address: Christian Medical College, IDA Scudder Rd, Vellore, Tamil Nadu 632004</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="{{ url_for('home') }}" class="active">Home</a></p>
+                <p><a href="{{ url_for('about') }}">About</a></p>
+                <p><a href="{{ url_for('details') }}">Details</a></p>
+                <p><a href="{{ url_for('predict') }}">Predict</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p><a href="mailto:support@anemiasense.com">Technical Support</a></p>
+                <p><a href="mailto:health@anemiasense.com">Health Inquiries</a></p>
+                <p>Available 24/7 for assistance</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 AnemiaSense. All rights reserved. | Leveraging Machine Learning for Precise Anemia Detection</p>
+        </div>
+    </footer>
+</body>
+</html>

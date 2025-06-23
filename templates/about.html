@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Anemia - Understanding Blood Parameters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                🩸 AnemiaSense
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+                <li><a href="{{ url_for('details') }}">Details</a></li>
+                <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            </ul>
+            <a href="{{ url_for('predict') }}" class="cta-button">Get Prediction</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Understanding Anemia</h1>
+            <p>Learn about anemia and the key blood parameters that help in its detection and diagnosis</p>
+        </section>
+
+        <div class="container">
+            <!-- About Anemia -->
+            <section class="about-content">
+                <h2>What is Anemia?</h2>
+                <p>
+                    Anemia is a medical condition characterized by a deficiency in the number of red blood cells or the amount of hemoglobin in the blood. This results in reduced oxygen-carrying capacity of the blood, leading to symptoms such as fatigue, weakness, shortness of breath, and pale skin.
+                </p>
+                <p>
+                    There are several types of anemia, including iron-deficiency anemia, vitamin B12 deficiency anemia, chronic disease anemia, and others. Early detection and proper management are crucial for preventing complications and maintaining optimal health.
+                </p>
+                <p>
+                    Our machine learning model analyzes key blood parameters to help identify potential anemia cases, enabling early intervention and better health outcomes.
+                </p>
+            </section>
+
+            <!-- Blood Parameters Cards -->
+            <section class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🩸</div>
+                    <h3>Hemoglobin (Hb)</h3>
+                    <p>
+                        Hemoglobin is the iron-rich protein in red blood cells that carries oxygen from your lungs to the rest of your body. It's the most important indicator for diagnosing anemia.
+                    </p>
+                    <div class="normal-range">
+                        <strong>Normal Range:</strong><br>
+                        • Men: 13.8-17.2 g/dL<br>
+                        • Women: 12.1-15.1 g/dL
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📏</div>
+                    <h3>MCH Value</h3>
+                    <p>
+                        Mean Corpuscular Hemoglobin (MCH) measures the average amount of hemoglobin in each red blood cell. It helps determine the type and cause of anemia.
+                    </p>
+                    <div class="normal-range">
+                        <strong>Normal Range:</strong><br>
+                        • Adults: 27-32 picograms (pg)<br>
+                        • Low MCH may indicate iron deficiency
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔬</div>
+                    <h3>MCHC Value</h3>
+                    <p>
+                        Mean Corpuscular Hemoglobin Concentration (MCHC) measures the concentration of hemoglobin in red blood cells. It indicates how packed with hemoglobin your red blood cells are.
+                    </p>
+                    <div class="normal-range">
+                        <strong>Normal Range:</strong><br>
+                        • Adults: 32-36 g/dL<br>
+                        • Helps classify anemia types
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">⚪</div>
+                    <h3>MCV Value</h3>
+                    <p>
+                        Mean Corpuscular Volume (MCV) measures the average size of red blood cells. It helps classify anemia as microcytic, normocytic, or macrocytic.
+                    </p>
+                    <div class="normal-range">
+                        <strong>Normal Range:</strong><br>
+                        • Adults: 80-100 femtoliters (fL)<br>
+                        • Small cells: < 80 fL (microcytic)<br>
+                        • Large cells: > 100 fL (macrocytic)
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Information -->
+            <section class="about-content">
+                <h2>Why Early Detection Matters</h2>
+                <p>
+                    Early detection of anemia is crucial because it allows for timely intervention and treatment. Untreated anemia can lead to serious complications including heart problems, pregnancy complications, severe fatigue, and weakened immune system.
+                </p>
+                <p>
+                    Our AI-powered prediction system analyzes your blood parameters using advanced machine learning algorithms to provide accurate anemia risk assessment. This enables you to take proactive steps towards better health management.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AnemiaSense</h3>
+                <p>Advanced machine learning platform for anemia detection and health monitoring. Empowering individuals with early detection capabilities for better health outcomes.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@anemiasense.com</p>
+                <p>Phone: 080003 38855</p>
+                <p>Address: Christian Medical College, IDA Scudder Rd, Vellore, Tamil Nadu 632004</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="{{ url_for('home') }}" class="active">Home</a></p>
+                <p><a href="{{ url_for('about') }}">About</a></p>
+                <p><a href="{{ url_for('details') }}">Details</a></p>
+                <p><a href="{{ url_for('predict') }}">Predict</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p><a href="mailto:support@anemiasense.com">Technical Support</a></p>
+                <p><a href="mailto:health@anemiasense.com">Health Inquiries</a></p>
+                <p>Available 24/7 for assistance</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 AnemiaSense. All rights reserved. | Leveraging Machine Learning for Precise Anemia Detection</p>
+        </div>
+    </footer>
+</body>
+</html>

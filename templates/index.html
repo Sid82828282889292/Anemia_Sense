@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia Predictor - Your Health Guardian</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="logo">
+                🩸 AnemiaSense
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('details') }}">Details</a></li>
+                <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            </ul>
+            <a href="{{ url_for('predict') }}" class="cta-button">Get Prediction</a>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Anemia Predictor: Your Health Guardian</h1>
+            <p>Empowering you with early detection for better management and healthier living</p>
+            <a href="{{ url_for('details') }}" class="hero-button">Start Your Health Check</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="about-preview">
+                <div class="page-header">
+                    <h1>Advanced Anemia Detection</h1>
+                    <p>Using machine learning algorithms to analyze your blood parameters and provide accurate anemia predictions with personalized health recommendations.</p>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🔬</div>
+                        <h3>Precise Analysis</h3>
+                        <p>Our advanced machine learning model analyzes multiple blood parameters including Hemoglobin, MCH, MCHC, and MCV values to provide accurate anemia detection.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Instant Results</h3>
+                        <p>Get immediate predictions and personalized health recommendations based on your blood parameters in just seconds.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Early Detection</h3>
+                        <p>Early detection of anemia can prevent serious health complications and help you take proactive steps towards better health management.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>Comprehensive Reports</h3>
+                        <p>Receive detailed analysis of your blood parameters with normal ranges and actionable health insights for informed decision-making.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AnemiaSense</h3>
+                <p>Advanced machine learning platform for anemia detection and health monitoring. Empowering individuals with early detection capabilities for better health outcomes.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@anemiasense.com</p>
+                <p>Phone: 080003 38855</p>
+                <p>Address: Christian Medical College, IDA Scudder Rd, Vellore, Tamil Nadu 632004</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="{{ url_for('home') }}" class="active">Home</a></p>
+                <p><a href="{{ url_for('about') }}">About</a></p>
+                <p><a href="{{ url_for('details') }}">Details</a></p>
+                <p><a href="{{ url_for('predict') }}">Predict</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Support</h3>
+                <p><a href="mailto:support@anemiasense.com">Technical Support</a></p>
+                <p><a href="mailto:health@anemiasense.com">Health Inquiries</a></p>
+                <p>Available 24/7 for assistance</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 AnemiaSense. All rights reserved. | Leveraging Machine Learning for Precise Anemia Detection</p>
+        </div>
+    </footer>
+</body>
+</html>
